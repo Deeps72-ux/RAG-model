@@ -1,6 +1,7 @@
 # 📚 RAG Chatbot 🔍 🤖 — Powered by LLaMA 3 on Groq
 
-Welcome to **Deepan's RAG Chatbot**, a lightweight, efficient Retrieval-Augmented Generation (RAG) chatbot that supports **PDF**, **text**, and **image (OCR)** uploads. This app uses the power of **LLaMA 3 hosted via Groq API**, **FAISS** for vector search, and **Sentence Transformers** for document embeddings.
+Welcome to **Deepan's RAG Chatbot**, a lightweight, efficient Retrieval-Augmented Generation (RAG) chatbot that supports **PDF**, **text**, and **image (OCR: Optical Character Recognition)** uploads.
+ This app uses the power of **LLaMA 3 hosted via Groq API**, **FAISS** for vector search, and **Sentence Transformers** for document embeddings.
 
 ![banner](https://img.shields.io/badge/Powered%20By-Groq%20%2B%20LLaMA3-brightgreen)  
 🔗 Hosted on GitHub: [Deeps72-ux/RAG-model](https://github.com/Deeps72-ux/RAG-model)
