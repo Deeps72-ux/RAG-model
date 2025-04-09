@@ -23,8 +23,9 @@ doc_embeddings=embedder.encode(docs,convert_to_numpy=True)
 if docs!=[]:
     dimension=doc_embeddings.shape[1]
     print("The dimension of each vector is ",dimension)
-    index=faiss.IndexFlatL2(dimension)
+    index=faiss.IndexFlatL2(dimension) 
     index.add(doc_embeddings)
+#organizing a collection of dense vectors (like embeddings from a model) in such a way that you can efficiently search for the most similar ones to a given query vector is known as indexing
 
 
 while True:
@@ -38,7 +39,7 @@ while True:
 
         #Retriving the top-3 relavent lines from the context
         k = 3
-        distances,indices = index.search(query_embedding,k)
+        distances,indices = index.search(query_embedding,k) #Brute-force search using Euclidean distance to find the closest vectors.
         retrieved = "\n".join([docs[i] for i in indices[0]])
 
         # Constructing prompt, giving the LLM and collecting its answer
