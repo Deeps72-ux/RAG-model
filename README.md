@@ -107,7 +107,7 @@ Windows: Download and install from: https://github.com/tesseract-ocr/tesseract/w
 
 ### 5. Run the application
 ``` bash
-streamlit run final_RAG.py
+streamlit run final_RAG_model.py
 ```
 
 ### 🔐 Environment Variables
