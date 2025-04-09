@@ -106,10 +106,11 @@ Windows: Download and install from: https://github.com/tesseract-ocr/tesseract/w
 ### 🔐 Environment Variables
 Create a .env file in the root of your project:
 
-ini
-
+```base
 GROQ_API_KEY=your_groq_api_key_here
-⚠️ Important: Never expose your .env file in public repositories. Add .env to .gitignore.
+```
+
+⚠️ Important: Never expose your .env file in public repositories. Add .env to .gitignore. 
 
 ### ▶️ Running the App
 ``` bash
