@@ -33,7 +33,7 @@ Welcome to **Deepan's RAG Chatbot**, a lightweight, efficient Retrieval-Augmente
 | API Secrets     | dotenv (`.env` file for config)           |
 
 - **Frontend:** Streamlit
-- **LLM:** [Flan-T5-Large (Hugging Face)](https://huggingface.co/google/flan-t5-large)
+- **LLM:** 
 - **Embedding:** `all-MiniLM-L6-v2`
 - **Vector Store:** FAISS
 - **OCR:** Tesseract via `pytesseract`
