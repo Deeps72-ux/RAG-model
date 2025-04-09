@@ -15,6 +15,7 @@ Welcome to **Deepan's RAG Chatbot**, a lightweight, efficient Retrieval-Augmente
 - 📚 FAISS vector store for fast semantic search
 - 💬 Interactive Streamlit chat interface
 - 🤖 Contextual responses generated via **Groq-hosted LLaMA 3 (8B)**
+- 💬 Memory of chat history
 
 ---
 
