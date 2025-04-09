@@ -42,7 +42,7 @@ RAG-model/ <br>
 ├── requirements.txt <br>
 ├── .env # Groq API key (excluded from Git) <br>
 └── README.md <br>
-└── Construction #File containing of different modular functionalities used to build the final model
+└── Construction # consists of different modular units to build the final model
 
 ---
 
