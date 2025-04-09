@@ -134,7 +134,7 @@ Ask any question in the chat box.
 Get a concise and relevant answer generated with RAG + Groq's LLaMA 3.
 
 ### 🧪 Example Use Cases
-Chat with your academic PDFs or scanned notes.
+Use the RAG model to understand your academic PDFs or scanned notes.
 
 Ask questions from invoices or image-based documents.
 
