@@ -26,27 +26,24 @@ Welcome to **Deepan's RAG Chatbot**, a lightweight, efficient Retrieval-Augmente
 |-----------------|-------------------------------------------|
 | User Interface  | Streamlit                                |
 | Embeddings      | Sentence Transformers (`all-MiniLM-L6-v2`) |
-| Vector Search   | FAISS                                     |
+| Vector database   | FAISS                                     |
 | OCR             | PyTesseract                               |
 | PDF Reading     | PyPDF2                                    |
 | LLM             | Groq API (LLaMA 3)                        |
 | Image Handling  | Pillow (`PIL`)                            |
 | API Secrets     | dotenv (`.env` file for config)           |
 
-- **Frontend:** Streamlit
-- **LLM:** 
-- **Embedding:** `all-MiniLM-L6-v2`
-- **Vector Store:** FAISS
-- **OCR:** Tesseract via `pytesseract`
+- **For text processing:** nltk library was used
 
 ---
 
 ## 📁 File Structure
 RAG-model/ <br>
-├── app.py # Main Streamlit application  <br>
+├── final_RAG_model.py # Main Streamlit application  <br>
 ├── requirements.txt <br>
 ├── .env # Groq API key (excluded from Git) <br>
 └── README.md <br>
+└── Construction #File containing of different modular functionalities used to build the final model
 
 ---
 
@@ -122,7 +119,7 @@ Create a .env file in the root of your project:
 GROQ_API_KEY=your_groq_api_key_here
 ```
 
-⚠️ Important: Never expose your .env file in public repositories. Add .env to .gitignore. 
+⚠️ The file .env is ignored in this repository on accounts of privacy
 
 ### ▶️ Running the App
 ``` bash
@@ -131,18 +128,21 @@ streamlit run app.py
 You’ll be greeted with:
 
 ```bash
-🌟 Deepan's RAG Chatbot welcomes you 🙂
+🌟 Deepan's RAG Chatbot 🙂
 📎 Upload files and ask questions with real context!
 ```
 
 ### 💡 Sample Workflow
 Upload one or more .txt, .pdf, or .jpg files.
 
-Click "📚 Process Files" to embed them using Sentence Transformers.
+You will see the text generated format which you can edit. 
+If you generated text is ok, click "📚 Process Files" to embed them using Sentence Transformers.
 
 Ask any question in the chat box.
 
 Get a concise and relevant answer generated with RAG + Groq's LLaMA 3.
+
+Clear Chat: Option to clear the chat history.
 
 ### 🧪 Example Use Cases
 Use the RAG model to understand your academic PDFs or scanned notes.
