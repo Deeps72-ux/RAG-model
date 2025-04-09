@@ -147,7 +147,7 @@ The page opens with:
 
 ```bash
 Deepan's 🙂  RAG Chatbot 🔍 🤖 
-📎 Upload files and ask questions with real context!
+📎 Kindly upload text, PDF, or image files to provide a background context
 ```
 
 ### 💡 Sample Workflow
