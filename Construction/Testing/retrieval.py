@@ -1,3 +1,4 @@
+#to check the relavance of the retrieved content to the user query
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
