@@ -50,11 +50,10 @@ while True:
         answer=generator(prompt,max_length=128,do_sample=True)[0]["generated_text"]
 
         print(f"The context : \n {retrieved}\n")
-        print(f"Bot:{answer}\n")
     
     else:
         prompt=f"Answer the question: {query}"
         answer=generator(prompt,max_length=128,do_sample=True)[0]["generated_text"]
-        print(f"Bot:{answer}\n")
+    print(f"Bot:{answer}\n")
 
 
