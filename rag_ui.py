@@ -76,7 +76,7 @@ if uploaded_files:
 # ----------- Chat UI -----------
 
 st.markdown("---")
-st.subheader("💬 Chat with your documents : Deepan gives no guarentee for right answer :P")
+st.subheader("💬 Chat with your documents ")
 
 for chat in st.session_state.chat_history:
     with st.chat_message("user"):
