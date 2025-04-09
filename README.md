@@ -58,8 +58,7 @@ RAG-model/ <br>
    - Images use Tesseract OCR to extract text.
 
 4. **Embedding**  
-   The text extracted is
-   Each paragraph in the document uploaded by the user is converted into a vector notation (process called as embedding) and stored in a vector database.
+   The text extracted is broken down into a list of sentences, converted into a vector notation (process called as embedding) and stored in a vector database.
    The documents are embedded using `all-MiniLM-L6-v2` via `sentence-transformers` and stored in the faiss (Facebook AI Similarity Search) vector database.
 
 6. **FAISS Indexing**  
