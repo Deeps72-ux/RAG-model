@@ -68,7 +68,28 @@ RAG-model/ <br>
    For each user query:
    - The top-3 relevant chunks of text are retrieved from the FAISS vector database. They are found using the euclidean distance similarity i.e. the three vectors nearby the query vector in the FAISS database
    - Feed the query to the LLM (Large Language Model) along with the retrieved text as context
-   - Display the result of the LLM 
+   - Display the result of the LLM
+  <pre> 
+            ┌──────────────┐
+            │ Context Doc  │
+            └──────┬───────┘
+                   ↓
+     ┌────────────────────────────┐ 
+     │   Sentence Transformer     │
+     └────────────┬───────────────┘
+                  ↓
+            ┌──────────────┐
+            │   FAISS DB   │◄─────------------ User Query
+            └─────┬────────┘                     │
+                  ↓ Top-k Relevant Context       │
+        ┌──────────────────────────┐             │
+        │    Prompt Generator      │◄─────-------┘
+        │   (FLAN-T5 / LLaMA-3)    │
+        └────────────┬─────────────┘
+                     ↓
+               ✨ Final Answer ✨
+ </pre>
+
 
 ---
 
