@@ -1,28 +1,39 @@
-# 🔍 RAG Chatbot — By Deepan
+# 📚 RAG Chatbot 🔍 🤖 — Powered by LLaMA 3 on Groq
 
-Retrieval augmented generation model 
-
-A lightweight Retrieval-Augmented Generation (RAG) chatbot built using Streamlit, FAISS, and LangChain + OpenAI. This chatbot allows you to upload text, PDF, or image files and interact with their content via natural language queries.
-
-## ✨ Features
-
-- 📄 Supports multiple document formats: `.txt`, `.pdf`, `.jpg`, `.jpeg`
-- 🤖 Uses `LangChain` with OpenAI's GPT models for accurate question answering
-- 🧠 Embeds content with OpenAI Embeddings and retrieves using FAISS
-- 💬 Streamlit-based UI for easy interaction
-- 🔍 Context-aware answers using Retrieval-Augmented Generation
-
-## 🚀 Getting Started
-
-### 1. Upload a folder
-
+Welcome to **Deepan's RAG Chatbot**, a lightweight, efficient Retrieval-Augmented Generation (RAG) chatbot that supports **PDF**, **text**, and **image (OCR)** uploads. This app uses the power of **LLaMA 3 hosted via Groq API**, **FAISS** for vector search, and **Sentence Transformers** for document embeddings.
 
 ---
 
-Would you like me to:
+## 🚀 Features
 
-1. Update your code to use **LangChain + OpenAI**?
-2. Generate `requirements.txt` and `.env` for you?
+- 🔍 Upload and process multiple file types: `.txt`, `.pdf`, `.jpg`, `.jpeg`
+- 📑 Extract text from documents and images (OCR with Tesseract)
+- 🧠 Embed documents using `all-MiniLM-L6-v2`
+- 📚 Vector store using FAISS for semantic similarity search
+- 💬 Interactive Streamlit chat interface
+- 🤖 LLM responses generated via **Groq-hosted LLaMA 3 (8B)**
 
-Let me know what you want to do next — we can take it step by step!
+---
 
+## 🧰 Tech Stack
+
+| Component       | Library/Tool                             |
+|-----------------|-------------------------------------------|
+| UI              | Streamlit                                |
+| Embeddings      | Sentence Transformers (`all-MiniLM-L6-v2`) |
+| Vector Search   | FAISS                                     |
+| OCR             | PyTesseract                               |
+| PDF Reading     | PyPDF2                                    |
+| LLM             | Groq API (LLaMA 3)                        |
+| Image Handling  | Pillow (`PIL`)                            |
+| API Secrets     | dotenv (`.env` file for config)           |
+
+---
+
+## 📝 Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/rag-chatbot-groq.git
+cd rag-chatbot-groq
