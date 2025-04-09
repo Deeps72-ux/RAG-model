@@ -1,3 +1,5 @@
+#https://huggingface.co/docs/transformers/model_doc/t5
+
 from transformers import pipeline
 from sentence_transformers import SentenceTransformer
 import faiss
@@ -11,7 +13,7 @@ with open("../Data/Context.txt","r") as f:
     full_text=f.read() 
 
 #Sentence level split for finer granularity
-docs=sent_tokenize(full_text)
+docs=sent_tokenize(full_text) # gives a list of sentences in the document
 print(docs)
 print(f"Number of sentences indexed:{len(docs)}")
 
