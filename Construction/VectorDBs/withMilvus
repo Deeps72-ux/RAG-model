@@ -1,0 +1,73 @@
+from transformers import pipeline
+from sentence_transformers import SentenceTransformer
+from pymilvus import connections, FieldSchema, CollectionSchema, DataType, Collection
+import numpy as np
+import time
+
+# Connect to Milvus (adjust host/port if using remote)
+connections.connect("default", host="localhost", port="19530")
+
+# Load context
+with open("data/context.txt", "r") as f:
+    docs = f.read().split("\n\n")
+
+# Step 1: Encode documents
+embedder = SentenceTransformer("all-MiniLM-L6-v2")
+doc_embeddings = embedder.encode(docs, convert_to_numpy=True)
+
+dimension = doc_embeddings.shape[1]
+print("The dimension of each vector is ", dimension)
+
+# Step 2: Define Milvus schema
+fields = [
+    FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
+    FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=dimension),
+    FieldSchema(name="text", dtype=DataType.VARCHAR, max_length=1000)
+]
+schema = CollectionSchema(fields, description="RAG chatbot collection")
+
+# Step 3: Create collection
+collection_name = "rag_docs"
+if collection_name in Collection.list_collections():
+    Collection(name=collection_name).drop()
+collection = Collection(name=collection_name, schema=schema)
+collection.create_index(field_name="embedding", index_params={
+    "metric_type": "L2",
+    "index_type": "IVF_FLAT",
+    "params": {"nlist": 128}
+})
+
+# Step 4: Insert data
+data = [doc_embeddings.tolist(), docs]
+collection.insert([None, *data])
+collection.flush()
+
+# Load generator model
+generator = pipeline("text2text-generation", model="google/flan-t5-base")
+
+print("🔍 Milvus-based RAG chatbot ready! Type your questions. type exit or quit to leave\n")
+
+# RAG loop
+while True:
+    query = input("You: ")
+    if query.lower() in ["exit", "quit"]:
+        break
+
+    # Step 5: Embed query
+    query_embedding = embedder.encode([query], convert_to_numpy=True)
+
+    # Step 6: Search Milvus
+    collection.load()
+    results = collection.search(
+        data=query_embedding,
+        anns_field="embedding",
+        param={"metric_type": "L2", "params": {"nprobe": 10}},
+        limit=3,
+        output_fields=["text"]
+    )
+    retrieved = "\n".join([hit.entity.get("text") for hit in results[0]])
+
+    # Step 7: Generate response
+    prompt = f"Answer the question: {query}\nContext: {retrieved}"
+    answer = generator(prompt, max_length=128, do_sample=True)[0]['generated_text']
+    print(f"Bot: {answer}\n")
