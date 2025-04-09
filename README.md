@@ -32,6 +32,12 @@ Welcome to **Deepan's RAG Chatbot**, a lightweight, efficient Retrieval-Augmente
 | Image Handling  | Pillow (`PIL`)                            |
 | API Secrets     | dotenv (`.env` file for config)           |
 
+- **Frontend:** Streamlit
+- **LLM:** [Flan-T5-Large (Hugging Face)](https://huggingface.co/google/flan-t5-large)
+- **Embedding:** `all-MiniLM-L6-v2`
+- **Vector Store:** FAISS
+- **OCR:** Tesseract via `pytesseract`
+
 ---
 
 ## 📁 File Structure
@@ -43,13 +49,37 @@ RAG-model/ <br>
 
 ---
 
-## 📝 Setup Instructions
+## 🧪 How It Works
+
+1. **Document Upload**  
+   Upload `.pdf`, `.txt`, or image files (`.jpg`, `.jpeg`).
+   
+2. **Text Extraction**  
+   - PDFs and text files are parsed directly.
+   - Images use Tesseract OCR to extract text.
+
+3. **Embedding**  
+   Each paragraph is embedded using `all-MiniLM-L6-v2` via `sentence-transformers`.
+
+4. **FAISS Indexing**  
+   Embeddings are indexed using `faiss.IndexFlatL2`.
+
+5. **RAG Workflow**  
+   For each user query:
+   - Retrieve top-3 relevant chunks using FAISS
+   - Generate response from the LLM (Large Language Model)
+
+---
+
+
+### 📝 Setup Instructions
 
 ### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Deeps72-ux/RAG-model.git
 cd RAG-model
+pip install -r requirements.txt
 ```
 
 ### 2. Create and Activate a Virtual Environment (Optional)
