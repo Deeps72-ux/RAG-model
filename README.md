@@ -105,6 +105,11 @@ brew install tesseract
 ```
 Windows: Download and install from: https://github.com/tesseract-ocr/tesseract/wiki
 
+### 5. Run the application
+``` bash
+streamlit run final_RAG.py
+```
+
 ### 🔐 Environment Variables
 Create a .env file in the root of your project:
 
