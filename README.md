@@ -37,12 +37,14 @@ Welcome to **Deepan's RAG Chatbot**, a lightweight, efficient Retrieval-Augmente
 ---
 
 ## 📁 File Structure
-RAG-model/ <br>
-├── final_RAG_model.py # Main Streamlit application  <br>
-├── requirements.txt <br>
-├── .env # Groq API key (excluded from Git) <br>
-└── README.md <br>
-└── Construction # consists of different modular units to build the final model
+<pre>
+RAG-model/
+├── final_RAG_model.py     # 🎯 Main Streamlit app to run the RAG pipeline
+├── requirements.txt       # 📦 List of required Python packages
+├── .env                   # 🔐 Environment file containing the Groq API key (excluded from Git)
+├── README.md              # 📘 Project overview and usage instructions
+└── Construction/          # 🏗️ Modular components used to build the final RAG model
+</pre>
 
 ---
 
