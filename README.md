@@ -101,7 +101,6 @@ RAG-model/ <br>
 ```bash
 git clone https://github.com/Deeps72-ux/RAG-model.git
 cd RAG-model
-pip install -r requirements.txt
 ```
 
 ### 2. Create and Activate a Virtual Environment (Optional)
