@@ -14,10 +14,9 @@ Welcome to **Deepan's RAG Chatbot**, a lightweight, efficient Retrieval-Augmente
 - 🔍 OCR support using Tesseract for image files
 - 🧠 Embed documents using `all-MiniLM-L6-v2` from Sentence Transformers
 - 📚 FAISS vector store for fast semantic search
-- 💬 Interactive Streamlit chat interface
+- 💬 Interactive Streamlit chat interface with chat history memory 
 - 🤖 Contextual responses generated via **Groq-hosted LLaMA 3 (8B)**
-- 💬 Memory of chat history
-
+  
 ---
 
 ## 🧰 Tech Stack
