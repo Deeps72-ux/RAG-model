@@ -54,21 +54,26 @@ RAG-model/ <br>
 
 1. **Document Upload**  
    Upload `.pdf`, `.txt`, or image files (`.jpg`, `.jpeg`).
+   The document uploaded by the user gives the context for the LLM (Large Language Model) to process the user queries
    
-2. **Text Extraction**  
-   - PDFs and text files are parsed directly.
+3. **Text Extraction**  
+   - Text files are parsed directly.
+   - PDF files are parsed with the help of PyPDF2 library
    - Images use Tesseract OCR to extract text.
 
-3. **Embedding**  
-   Each paragraph is embedded using `all-MiniLM-L6-v2` via `sentence-transformers`.
+4. **Embedding**  
+   The text extracted is
+   Each paragraph in the document uploaded by the user is converted into a vector notation (process called as embedding) and stored in a vector database.
+   The documents are embedded using `all-MiniLM-L6-v2` via `sentence-transformers` and stored in the faiss (Facebook AI Similarity Search) vector database.
 
-4. **FAISS Indexing**  
+6. **FAISS Indexing**  
    Embeddings are indexed using `faiss.IndexFlatL2`.
 
-5. **RAG Workflow**  
+7. **Retrieval and generation**  
    For each user query:
-   - Retrieve top-3 relevant chunks using FAISS
-   - Generate response from the LLM (Large Language Model)
+   - The top-3 relevant chunks of text are retrieved from the FAISS vector database. They are found using the euclidean distance similarity i.e. the three vectors nearby the query vector in the FAISS database
+   - Feed the query to the LLM (Large Language Model) along with the retrieved text as context
+   - Display the result of the LLM 
 
 ---
 
