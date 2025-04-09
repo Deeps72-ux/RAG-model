@@ -124,10 +124,10 @@ GROQ_API_KEY=your_groq_api_key_here
 ``` bash
 streamlit run app.py
 ```
-You’ll be greeted with:
+The page opens with:
 
 ```bash
-🌟 Deepan's RAG Chatbot 🙂
+Deepan's 🙂  RAG Chatbot 🔍 🤖 
 📎 Upload files and ask questions with real context!
 ```
 
