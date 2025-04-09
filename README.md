@@ -24,7 +24,7 @@ Welcome to **Deepan's RAG Chatbot**, a lightweight, efficient Retrieval-Augmente
 
 | Component       | Library/Tool                             |
 |-----------------|-------------------------------------------|
-| UI              | Streamlit                                |
+| User Interface  | Streamlit                                |
 | Embeddings      | Sentence Transformers (`all-MiniLM-L6-v2`) |
 | Vector Search   | FAISS                                     |
 | OCR             | PyTesseract                               |
@@ -97,6 +97,7 @@ pip install -r requirements.txt
 Ubuntu/Debian:
 ``` bash
 sudo apt install tesseract-ocr
+```
 macOS:
 
 ``` bash
