@@ -122,7 +122,7 @@ user_query = st.chat_input("Ask something...")
 if user_query:
     if not st.session_state.index or not st.session_state.docs:
         # No RAG context, so use LLM only
-        prompt = f"User question: {user_query}\nAnswer it as best as you can without any external context."
+        prompt = f"User question: {user_query}\nAnswer it as best as you can."
         answer = generate_with_llama3(prompt)
 
     else:
