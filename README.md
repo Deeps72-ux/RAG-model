@@ -192,7 +192,8 @@ Stay tuned for Groq dashboard updates: https://console.groq.com
 
 ### 🔮 Future Improvements
  LangChain integration
-
+ Multi-model RAG 
+ 
 ### Streaming responses
 
  Highlight matched text in source documents
