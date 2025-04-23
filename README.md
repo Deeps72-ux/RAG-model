@@ -96,7 +96,7 @@ RAG-model/
 ---
 
 
-### 📝 Setup Instructions
+## 📝 Setup Instructions
 
 ### 1. Clone the Repository
 
@@ -141,7 +141,7 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ⚠️ The file .env is ignored in this repository on accounts of privacy
 
-### ▶️ Running the App
+## ▶️ Running the App
 ``` bash
 streamlit run app.py
 ```
@@ -152,7 +152,7 @@ Deepan's 🙂  RAG Chatbot 🔍 🤖
 📎 Kindly upload text, PDF, or image files to provide a background context
 ```
 
-### 💡 Sample Workflow
+## 💡 Sample Workflow
 Upload one or more .txt, .pdf, or .jpg files.
 
 You will see the text generated format which you can edit. 
@@ -164,14 +164,14 @@ Get a concise and relevant answer generated with RAG + Groq's LLaMA 3.
 
 Clear Chat: Option to clear the chat history.
 
-### 🧪 Example Use Cases
+## 🧪 Example Use Cases
 Use the RAG model to understand your academic PDFs or scanned notes.
 
 Ask questions from invoices or image-based documents.
 
 Build personal AI assistants for any kind of domain corpus.
 
-### 🛠️ Troubleshooting
+## 🛠️ Troubleshooting
 Tesseract not found?
 Ensure it's installed and added to your system PATH.
 
@@ -190,17 +190,17 @@ Track approximate usage manually in the app logs.
 
 Stay tuned for Groq dashboard updates: https://console.groq.com
 
-### 🔮 Future Improvements
+## 🔮 Future Improvements
  LangChain integration
  Multi-model RAG 
  
-### Streaming responses
+## Streaming responses
 
  Highlight matched text in source documents
 
  UI themes and dark mode
 
-### 🙏 Acknowledgements
+## 🙏 Acknowledgements
 Groq
 
 Meta's LLaMA 3
@@ -211,14 +211,14 @@ Streamlit
 
 Tesseract OCR
 
-### 📜 License
-This project is licensed under the MIT License. Feel free to use, modify, and share it.
+## 📜 License
+Unlicensed
 
-### 🤝 Contributing
+## 🤝 Contributing
 Pull requests, feedback, and ideas are most welcome!
 Just fork the repo, make your changes, and raise a PR.
 
-### 👋 Author
+## 👋 Author
 Deepan
 
 
