@@ -94,6 +94,7 @@ graph TD
     E --> F[🔎 Search Relevant Chunks]
     F --> G[🧠 RAG-based LLM Response]
     G --> H[📤 Response/Answer]
+end
 ```
 
 ## 🧪 How It Works
