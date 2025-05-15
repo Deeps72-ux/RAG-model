@@ -47,6 +47,54 @@ RAG-model/
 </pre>
 
 ---
+```mermaid
+graph TD
+    A[React Frontend] -->|REST API| B[FastAPI Backend]
+    
+    subgraph Frontend
+        A --> C[SourcesPanel: Upload/Manage Sources]
+        A --> D[ChatWindow: Display Conversation]
+        A --> E[ChatInput: Query Input]
+        A --> F[MediaRenderer: Render Images/Videos]
+    end
+    
+    subgraph Backend
+        B --> G[Ingestion Service]
+        B --> H[Query Processor]
+        B --> I[Edge Data Service]
+        
+        G -->|PDF, Text| J[PyMuPDF/pdfplumber]
+        G -->|Audio/Video| K[Whisper/MoviePy]
+        G -->|URLs| L[Requests/BeautifulSoup]
+        G -->|Google Drive| M[Google Drive API]
+        G --> N[Sentence Chunking: NLTK/Spacy]
+        G --> O[Embedding: Sentence-Transformers/CLIP]
+        O --> P[FAISS Vector Store]
+        
+        H -->|Context| Q[Gemini-1.5 Pro/Gemini-flash2.0]
+        H -->|Web Search| R[SerpAPI]
+        H -->|Retrieval| P
+        
+        I -->|API Calls| S[Edge Data API]
+        B --> T[SQLite: Metadata Storage]
+    end
+
+```
+
+```mermaid
+graph TD
+    A[📥 Input] --> B1[🔄 Extract Tables (pdfplumber)]
+    A --> B2[🔄 Extract Text (PyMuPDF)]
+    A --> B3[🔄 OCR/Visual Extract (Donut/CLIP)]
+    B1 --> C[🔄 Chunk & Embed]
+    B2 --> C
+    B3 --> C
+    C --> D[💾 FAISS / Vector DB (Euc/384-d)]
+    D --> E[🔄 Query Embedding]
+    E --> F[🔎 Search Relevant Chunks]
+    F --> G[🧠 RAG-based LLM Response]
+    G --> H[📤 Response/Answer]
+```
 
 ## 🧪 How It Works
 
